@@ -22,16 +22,15 @@ message '\ long' do |message, params|
   post "That's what she said!"
 end
 
-message /^%imp (.*)/ do |message, params|
+query /^%imp (.*)/, :from => "Chuck Lauer Vose" do |message, params|
   post params[0]
 end
 
 # Log every single line
 # (you can use "message :all" too ;)
-# message do |message, params|
-#   puts message
-#   puts message.user
-# end
+message do |message, params|
+  puts message
+end
 # # Respond with whatever was given as the answer.
 # message ".answer :me" do |message, params|
 #   post "ok, the answer is: #{params[:me]}"

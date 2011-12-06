@@ -45,5 +45,7 @@ configure do |conf|
   conf.nick = names[rand(names.length)]
 end
 
-
 require File.expand_path('../lib/messages', __FILE__)
+require File.expand_path('../lib/listener', __FILE__)
+
+Listener.start
