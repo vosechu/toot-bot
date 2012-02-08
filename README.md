@@ -6,7 +6,7 @@ Toot-bot is my generic notifier bot for jabber. It's up here for posterity and a
 
 Set up a config.yml with these values:
 
-    scripps:
+    development:
       login: 'username or email'
       channel: 'channel to join'
       server: 'server address'

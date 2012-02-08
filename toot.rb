@@ -33,7 +33,7 @@ if RUBY_VERSION >= "1.9"
 end
 
 configure do |conf|
-  y = YAML::load(File.open("config.yml"))
+  y = YAML::load(File.open("config/application.yml"))
   env = ENV['ENV'] || 'scripps-dev'
   
   conf.login = y[env]['login']
@@ -45,7 +45,9 @@ configure do |conf|
   conf.nick = names[rand(names.length)]
 end
 
-require File.expand_path('../lib/messages', __FILE__)
-require File.expand_path('../lib/listener', __FILE__)
+$LOAD_PATH << './lib'
 
+require 'listener'
 Listener.start
+#require 'twitter'
+#Twitter.start
